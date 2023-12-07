@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<!-- saved from url=(0022)http://localhost:5173/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <script type="module" src="./Vite + Svelte_files/client"></script>
+
+    
+    <link rel="icon" type="image/svg+xml" href="http://localhost:5173/vite.svg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vite + Svelte</title>
+  <style type="text/css" data-vite-dev-id="/Users/vebjornfh/Documents/Programering/Portefølje/MyPortfolio/src/app.css">:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fffffe;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  cursor: url("/src/assets/Img/cursor-scroll.svg"), auto;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+}
+
+h1 {
+  font-size: 4.2em;
+  line-height: 1.1;
+  color: #272343;
+  margin: 0%;
+}
+
+h3 {
+  color: #272343;
+  margin: 0%;
+}
+p {
+  color: #272343;
+  margin: 0%;
+}
+
+.main-cont {
+  position: absolute;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.home-cont,
+.about-cont,
+.myWork-cont {
+  background-color: #fffffe;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.front-cont {
+}
+
+.front-main-info {
+  display: flex;
+  flex-direction: row;
+}
+.front-info-cont {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.location-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: end;
+  gap: 10px;
+}
+
+.location-img {
+  margin-bottom: 4px;
+  cursor: pointer;
+}
+
+.info-icons {
+  display: flex;
+  flex-direction: row;
+  gap: 15px;
+  cursor: pointer;
+}
+
+.cv-btn {
+  background-color: #fff;
+  height: 50px;
+  width: 120px;
+  border: 1.5px solid #272343;
+  border-radius: 40px;
+  color: #272343;
+}
+
+.profile-picture {
+  height: 350px;
+  border-radius: 60%;
+  border: #272343 solid;
+}
+
+.tech-stack-cont {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: start;
+  gap: 30px;
+}
+
+.tech-stack-icons-cont {
+  display: flex;
+  flex-direction: row;
+  gap: 50px;
+  padding-left: 50px;
+  border-left: #272343 solid;
+}
+.tech-stack-icons {
+  height: 30px;
+}
+
+.map-cont-background {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  background-color: rgba(33, 33, 33, 0.8);
+  backdrop-filter: blur(4px);
+  height: 100%;
+  width: 100%;
+  cursor: auto;
+}
+
+.map-cont-background.active {
+  display: block;
+}
+
+.map-cont {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  height: 700px;
+  width: 50%;
+  border-radius: 50px;
+}
+
+.exitDiv {
+  position: fixed;
+  z-index: 10000;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  margin-top: 40px;
+  margin-left: 40px;
+}
+.exitBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #efefef;
+}
+.exitBtn:hover {
+  scale: 1.05;
+  cursor: pointer;
+  background-color: #f9f9f9;
+}
+</style><style type="text/css" data-vite-dev-id="/Users/vebjornfh/Documents/Programering/Portefølje/MyPortfolio/src/lib/header.svelte?svelte&amp;type=style&amp;lang.css">h3.s-b9koqo5Bw7-F{font-family:"Proxima Nova", sans-serif;font-weight:500;cursor:pointer}.header-main-cont.s-b9koqo5Bw7-F{position:absolute;z-index:999;top:0;left:0;right:0;width:100%;height:90px;background-color:transparent;transition:all .5s;display:flex;justify-content:center;cursor:auto;color:#272343;font-family:"Proxima Nova", sans-serif;font-weight:100;font-size:15px;overflow:hidden}.inner-cont.s-b9koqo5Bw7-F{width:90%;display:grid;grid-template-columns:1fr 1fr;padding-top:30px}.logo-cont.s-b9koqo5Bw7-F{display:flex;justify-content:start}.logo.s-b9koqo5Bw7-F{display:flex;flex-direction:row;justify-content:start;align-items:center;gap:10px;cursor:pointer;font-size:1.3em;font-weight:400}.logo-cont.s-b9koqo5Bw7-F:hover{color:#FF9D00}.logo-img.s-b9koqo5Bw7-F{height:40px;border-radius:50%}.settings-cont.s-b9koqo5Bw7-F{display:flex;flex-direction:row;justify-content:end;align-items:center;gap:20px}.settings-icons.s-b9koqo5Bw7-F{height:25px;cursor:pointer}.main-menu-cont.s-b9koqo5Bw7-F{position:fixed;top:200px;right:100px;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:1000;color:#272343}.home-btn.s-b9koqo5Bw7-F,.about-btn.s-b9koqo5Bw7-F,.experience-btn.s-b9koqo5Bw7-F,.projects-btn.s-b9koqo5Bw7-F{transition:all 0.5s}.home-btn.s-b9koqo5Bw7-F{color:#FF9D00}.line.s-b9koqo5Bw7-F{height:70px;width:2px;background-color:#272343}.s-b9koqo5Bw7-F{}</style><style type="text/css" data-vite-dev-id="/Users/vebjornfh/Documents/Programering/Portefølje/MyPortfolio/src/lib/contactForme.svelte?svelte&amp;type=style&amp;lang.css">.contact-cont.s-RvfezuMn3XK4{position:fixed;display:flex;flex-direction:column;align-items:end;gap:20px;z-index:998;top:45%;left:1%}.contact-btn.s-RvfezuMn3XK4{position:relative;background-color:#ebebeb;padding:10px;border:none;border-radius:50%;transform:scale(1.5);right:70%}.contact-btn.s-RvfezuMn3XK4:hover{cursor:pointer}.contact-imgs.active.s-RvfezuMn3XK4{animation:s-RvfezuMn3XK4-fade 0.5s}@keyframes s-RvfezuMn3XK4-fade{0%{opacity:0;scale:0}25%{opacity:0;scale:0
+  }75%{opacity:1;scale:1}100%{opacity:1;scale:1}}.contact-form-cont.s-RvfezuMn3XK4{display:flex;flex-direction:column;align-items:center;gap:10px;height:450px;width:290px;background-color:#fff;border-radius:10px;opacity:0}.contact-form-cont.active.s-RvfezuMn3XK4{opacity:1}.header-cont.s-RvfezuMn3XK4{width:90%;margin-top:10%;font-size:0.7rem;display:flex;flex-direction:column;text-align:center}.logo-img.s-RvfezuMn3XK4{height:25px}.form-cont.s-RvfezuMn3XK4{width:90%;display:flex;flex-direction:column;gap:20px}.name-cont.s-RvfezuMn3XK4,.email-cont.s-RvfezuMn3XK4,.select-cont.s-RvfezuMn3XK4,.massage-cont.s-RvfezuMn3XK4{position:relative;display:flex;align-items:center;justify-content:center}.header-name.s-RvfezuMn3XK4,.header-email.s-RvfezuMn3XK4,.header-select.s-RvfezuMn3XK4,.header-massage.s-RvfezuMn3XK4{position:absolute;z-index:1;left:10%;margin-bottom:20px;background-color:#fff;color:rgb(127, 127, 127);width:60px;display:flex;justify-content:center;pointer-events:none;transition:all .5s}.header-select.s-RvfezuMn3XK4{width:90px}.header-massage.s-RvfezuMn3XK4{margin-bottom:100px;width:70px}.input-name.s-RvfezuMn3XK4,.input-email.s-RvfezuMn3XK4,.select-area.s-RvfezuMn3XK4,.textarea-massage.s-RvfezuMn3XK4{position:relative;z-index:0;border-radius:4px;border:rgb(127, 127, 127) solid 1px;background-color:#fff;color:#272343;height:30px;width:85%;outline:none;transition:all .5s}.textarea-massage.s-RvfezuMn3XK4{background-color:#fff;height:100px}.submit-btn.s-RvfezuMn3XK4{width:80%;height:35px;background-color:#272343;color:#fff;border-radius:10px;border:none;display:flex;flex-direction:row;align-items:center;justify-content:center;gap:10px;cursor:pointer}.s-RvfezuMn3XK4{}</style><style type="text/css" data-vite-dev-id="/Users/vebjornfh/Documents/Programering/Portefølje/MyPortfolio/src/lib/map.svelte?svelte&amp;type=style&amp;lang.css">.map-cont.s-WXDPX7-fM3XJ{height:100%;width:100%}.s-WXDPX7-fM3XJ{}</style><script src="./Vite + Svelte_files/js" defer="" async=""></script><script type="text/javascript" charset="UTF-8" src="./Vite + Svelte_files/common.js"></script><script type="text/javascript" charset="UTF-8" src="./Vite + Svelte_files/util.js"></script><script type="text/javascript" charset="UTF-8" src="./Vite + Svelte_files/map.js"></script><script type="text/javascript" charset="UTF-8" src="./Vite + Svelte_files/marker.js"></script><script type="text/javascript" charset="UTF-8" src="./Vite + Svelte_files/infowindow.js"></script><script class="s-WXDPX7-fM3XJ">function loadGoogleMapsScript(callback) {
+      if (!window.google) {
+        const script = document.createElement("script");
+        script.src = "https://maps.googleapis.com/maps/api/js?key=AIzaSyA3v8RchVBKuR6fBBThDWrj4a678kzQiQc";
+        script.defer = true;
+        script.async = true;
+        script.onload = callback;
+        document.head.appendChild(script);
+      } else {
+        callback();
+      }
+    }</script></head>
+  <body>
+    <div id="app" speechify-initial-font-family="Times" speechify-initial-font-size="16px"><header class="header-main-cont s-b9koqo5Bw7-F"><div class="inner-cont s-b9koqo5Bw7-F"><div class="logo-cont s-b9koqo5Bw7-F"><div class="logo s-b9koqo5Bw7-F"><img class="logo-img s-b9koqo5Bw7-F" src="./Vite + Svelte_files/profile-picture.png" alt="">
+                Vebjørn Haugholt
+                <img src="./Vite + Svelte_files/check-mark-icon.svg" alt="" class="s-b9koqo5Bw7-F"></div></div> <div class="settings-cont s-b9koqo5Bw7-F"><img class="settings-icons s-b9koqo5Bw7-F" src="./Vite + Svelte_files/them-icon.svg" alt=""><img class="settings-icons s-b9koqo5Bw7-F" src="./Vite + Svelte_files/volume-icon.svg" alt=""><img class="settings-icons s-b9koqo5Bw7-F" src="./Vite + Svelte_files/language-icon.svg" alt=""><img class="settings-icons s-b9koqo5Bw7-F" src="./Vite + Svelte_files/day-icon.svg" alt=""></div></div></header> <div class="main-menu-cont s-b9koqo5Bw7-F"><div class="line s-b9koqo5Bw7-F"></div> <h3 class="home-btn s-b9koqo5Bw7-F" id="home-btn">Home</h3> <div class="line s-b9koqo5Bw7-F"></div> <h3 class="about-btn s-b9koqo5Bw7-F" id="about-btn">About</h3> <div class="line s-b9koqo5Bw7-F"></div> <h3 class="experience-btn s-b9koqo5Bw7-F" id="experience-btn">Experience</h3> <div class="line s-b9koqo5Bw7-F"></div> <h3 class="projects-btn s-b9koqo5Bw7-F" id="projects-btn">Projects</h3> <div class="line s-b9koqo5Bw7-F"></div></div><!--<Header>--> <div class="contact-cont s-RvfezuMn3XK4"><div class="contact-form-cont  s-RvfezuMn3XK4"><div class="header-cont s-RvfezuMn3XK4"><img class="logo-img s-RvfezuMn3XK4" src="./Vite + Svelte_files/contact-icon.svg" alt=""> <h4 class="s-RvfezuMn3XK4">Feel free to send us a message, and we'll respond to you as swiftly as we can.</h4></div> <form action="http://localhost:5173/" method="post" class="form-cont s-RvfezuMn3XK4"><div class="name-cont s-RvfezuMn3XK4"><h5 class="header-name s-RvfezuMn3XK4">* Name</h5> <input type="text" class="input-name s-RvfezuMn3XK4" name="name" id="name"></div> <div class="email-cont s-RvfezuMn3XK4"><h5 class="header-email s-RvfezuMn3XK4">* Email</h5> <input type="text" class="input-email s-RvfezuMn3XK4" name="email" id="email"></div> <div class="select-cont s-RvfezuMn3XK4"><h5 class="header-select s-RvfezuMn3XK4">* Select topic</h5> <select class="select-area s-RvfezuMn3XK4" name="subject" id="subject"><option hidden="" value="" class="s-RvfezuMn3XK4"></option><option value="Order and Shipping" class="s-RvfezuMn3XK4">Order and Shipping</option><option value="Repairs and returns" class="s-RvfezuMn3XK4">Repairs and returns</option></select></div> <div class="massage-cont s-RvfezuMn3XK4"><h5 class="header-massage s-RvfezuMn3XK4">* Message</h5> <textarea name="message" id="message" class="textarea-massage s-RvfezuMn3XK4" cols="30" rows="10"></textarea></div></form> <button class="submit-btn s-RvfezuMn3XK4"><img src="./Vite + Svelte_files/submit-icon.svg" alt="" class="s-RvfezuMn3XK4">Submit</button></div> <button class="contact-btn s-RvfezuMn3XK4"><img class="contact-imgs  s-RvfezuMn3XK4" src="./Vite + Svelte_files/contact-icon.svg" alt=""></button></div><!--<ContactForme>--> <div class="map-cont-background "><div class="map-cont"> <div id="map-canvas" class="map-cont s-WXDPX7-fM3XJ"><div style="height: 100%; width: 100%;"><div style="overflow: hidden;"></div></div></div><!--<Map>--> <div class="exitDiv"><div class="exitBtn"><img class="exit-img" src="./Vite + Svelte_files/exit-black-icon.svg" alt=""></div></div></div></div> <div class="main-cont"><div class="home-cont"><div class="front-cont"><div class="front-main-info"><div class="front-info-cont"><h1>Front-End Svelte <br> Developer</h1> <div class="location-cont"><p>Hi, i'm Vebjørn Haugholt. <br> A Front-end Developer based in Grimstad, Norway</p> <img class="location-img" src="./Vite + Svelte_files/location-pin.svg"></div> <div class="info-icons"><img src="./Vite + Svelte_files/linkedin-icon.svg" alt=""> <img src="./Vite + Svelte_files/github-icon.svg" alt=""> <button class="cv-btn">Download CV</button></div></div> <div class="front-img-cont"><img class="profile-picture" src="./Vite + Svelte_files/profile-picture.png" alt=""></div></div> <div class="tech-stack-cont"><h3>Tech Stack</h3> <div class="tech-stack-icons-cont"><img class="tech-stack-icons" src="./Vite + Svelte_files/html-icon.svg" alt=""><img class="tech-stack-icons" src="./Vite + Svelte_files/css-icon.svg" alt=""><img class="tech-stack-icons" src="./Vite + Svelte_files/javascript-icon.svg" alt=""><img class="tech-stack-icons" src="./Vite + Svelte_files/svelte-icon.svg" alt=""></div></div></div></div> <div class="about-cont"><h1>About Me</h1> <div class="about-content-cont"><img src="./Vite + Svelte_files/about-me-img.jpeg" alt=""> <div class="about-info"><div class="info-boxes"><div class="experience-box"><img alt=""> <h3>Experience</h3> <h4>2+years</h4> <h4>Frontend Development</h4></div> <div class="education-box"><img alt=""> <h3>Education</h3> <h4>3 years</h4> <h4>Multimedieteknologi og design</h4> <h4>University of agder</h4></div></div></div></div></div> <div class="experience-cont"></div> <div class="projects-cont"></div></div> <!--<Footer>--><!--<App>--></div>
+    <script type="module" src="./Vite + Svelte_files/main.js" speechify-initial-font-family="Times" speechify-initial-font-size="16px"></script>
+  
+
+<div id="speechify-screenshot-mode" style="position: fixed; top: 0px; right: 0px; width: 100%; min-height: 100%; z-index: 2147483640; display: none;" speechify-initial-font-family="Times" speechify-initial-font-size="16px"><template shadowrootmode="open"><div id="speechify-screenshot-mode-root" style="width: 100%; height: 100%; position: relative;"></div></template></div><div id="speechify-global-notifications" speechify-initial-font-family="Times" speechify-initial-font-size="16px"><template shadowrootmode="open"><div id="speechify-global-notifications-root" style="position: fixed; top: 0px; left: 0px; height: 100vh; z-index: 2147483644; width: 0vw;"></div></template></div><div id="speechify-summarization-fullscreen-mode" style="position: fixed; inset: 0px; overflow: auto; background: white; z-index: 1999; display: none;" speechify-initial-font-family="Times" speechify-initial-font-size="16px"><template shadowrootmode="open"><div id="speechify-summarization-fullscreen-mode-root" style="margin: 0px 33%;"></div></template></div><div id="speechify-shortcuts-prompt" speechify-initial-font-family="Times" speechify-initial-font-size="16px"><template shadowrootmode="open"><div id="speechify-shortcuts-prompt-root"></div></template></div></body></html>

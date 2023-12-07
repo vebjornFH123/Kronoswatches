@@ -1,0 +1,32 @@
+{
+	"name": "kron-s",
+	"version": "0.0.1",
+	"private": true,
+	"scripts": {
+		"dev": "vite dev",
+		"build": "vite build",
+		"preview": "vite preview",
+		"check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
+		"check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch"
+	},
+	"devDependencies": {
+		"@sveltejs/adapter-auto": "^2.0.0",
+		"@sveltejs/adapter-netlify": "^2.0.8",
+		"@sveltejs/kit": "^1.20.4",
+		"svelte": "^4.0.5",
+		"svelte-check": "^3.4.3",
+		"svelthree": "^0.119.0-5",
+		"typescript": "^5.0.0",
+		"video.js": "^8.5.2",
+		"vite": "^4.4.2"
+	},
+	"type": "module",
+	"dependencies": {
+		"@googlemaps/js-api-loader": "^1.16.2",
+		"@threlte/core": "^6.0.10",
+		"@threlte/extras": "^7.1.1",
+		"google-maps": "^4.3.3",
+		"svelte-routing": "^2.9.0",
+		"three": "^0.157.0"
+	}
+}
